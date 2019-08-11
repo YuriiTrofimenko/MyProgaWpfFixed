@@ -1,0 +1,33 @@
+﻿<Window x:Class="MyProgaWPF.Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyProgaWPF"
+        mc:Ignorable="d"
+        Title="Настройки" Height="350" Width="500"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel FlowDirection="RightToLeft" VerticalAlignment="Top" Grid.Column="0" Margin="0 10 0 0">
+            <Label FontWeight="Bold" Content=":Название магазина"/>
+            <Label FontWeight="Bold" Content=":Номер телефона"/>
+            <Label FontWeight="Bold" Content=":Расписание работы"/>
+            <Label FontWeight="Bold" Content=":Адрес"/>
+            <Label FontWeight="Bold" Content=":Условия ремонта"/>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Top" Grid.Column="1" Margin="0 11 0 0">
+            <TextBox Name="NameOfServiceCenter" HorizontalAlignment="Left" Width="200" Margin="2 4 0 4"/>
+            <TextBox Name="PhoneOfServiceCenter" HorizontalAlignment="Left" Width="200" Margin="2 4 0 4"/>
+            <TextBox Name="WorkHours" HorizontalAlignment="Left" Width="200" Margin="2 4 0 4"/>
+            <TextBox Name="AddressOfServiceCenter" HorizontalAlignment="Left" Width="200" Margin="2 4 0 4"/>
+            <TextBox Name="TermOfService" HorizontalAlignment="Left" Width="200" Height="100" Margin="2 4 0 4"/>
+        </StackPanel>
+        <Button Name="Save" Content="Сохранить" Click="ClickSave" Grid.Column="1" Width="80" Margin="4 4 0 40" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
+    </Grid>
+</Window>

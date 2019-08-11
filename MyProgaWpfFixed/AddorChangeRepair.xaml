@@ -1,0 +1,50 @@
+﻿<Window x:Class="MyProgaWPF.AddorChangeRepair"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:AutoBox="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
+        xmlns:local="clr-namespace:MyProgaWPF"
+        mc:Ignorable="d"
+        Title="AddRepair" Height="400" Width="500"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        >
+    <Grid KeyDown="pressKeyInAddOrChange" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel FlowDirection="RightToLeft" VerticalAlignment="Top" Grid.Column="0" >
+            <Label Name="LabelClient" FontWeight="Bold" Content=":Имя клиента"/>
+            <Label Name="LabelPhone" FontWeight="Bold" Content=":Телефон клиента"/>
+            <Label Name="LabelType" FontWeight="Bold" Content=":Тип устройства"/>
+            <Label Name="LabelManufact" FontWeight="Bold" Content=":Производитель"/>
+            <Label Name="LabelModel" FontWeight="Bold" Content=":Модель"/>
+            <Label Name="LabelSerial" FontWeight="Bold" Content=":Серийный номер"/>
+            <Label Name="LabelBreak" FontWeight="Bold" Content=":Поломка"/>
+            <Label Name="LabelKomplekt" FontWeight="Bold" Content=":Комплект"/>
+            <Label Name="LabelExternal" FontWeight="Bold" Content=":Внешний вид"/>
+            <Label Name="LabelPrePay" FontWeight="Bold" Content=":Предоплата"/>
+            <Label Name="LabelPreCost" FontWeight="Bold" Content=":Предварительная стоимость"/>
+            <Label Name="LabelCost" FontWeight="Bold" Content=":Окончательная стоимость"/>
+            <Label Name="LabelComment" FontWeight="Bold" Content=":Комментарии"/>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Top" Grid.Column="1" FocusManager.FocusedElement="{Binding ElementName=TXtype}">
+            <AutoBox:AutoCompleteBox Name="TXclient" PreviewKeyDown="previewTilde" HorizontalAlignment="Left" Width="200" Margin="2" Populating="AutoClient" />
+            <AutoBox:AutoCompleteBox Name="TXphone" PreviewKeyDown="previewTilde" HorizontalAlignment="Left" Width="200" Margin="2" Populating="AutoPhone" />
+            <ComboBox Name="TXtype" PreviewKeyDown="previewTilde" IsEditable="True" StaysOpenOnEdit="True" HorizontalAlignment="Left" Width="200" Margin="2"/>
+            <ComboBox Name="TXmanufact" PreviewKeyDown="previewTilde" IsEditable="True" StaysOpenOnEdit="True" HorizontalAlignment="Left" Width="200" Margin="2"/>
+            <TextBox Name="TXmodel" PreviewKeyDown="previewTilde" HorizontalAlignment="Left" Width="200" Margin="2 4 0 4"/>
+            <TextBox Name="TXserial" PreviewKeyDown="previewTilde" HorizontalAlignment="Left" Width="200" Margin="2 4 0 4"/>
+            <ComboBox Name="TXbreak" PreviewKeyDown="previewTilde" IsEditable="True" StaysOpenOnEdit="True" HorizontalAlignment="Left" Width="200" Margin="2"/>
+            <TextBox Name="TXkomplekt" PreviewKeyDown="previewTilde" HorizontalAlignment="Left" Width="200" Margin="2 4 0 4"/>
+            <TextBox Name="TXexternal" PreviewKeyDown="previewTilde" HorizontalAlignment="Left" Width="200" Margin="2 4 0 4"/>
+            <TextBox Name="TXprePay" PreviewKeyDown="previewSpace" PreviewTextInput="previewTextInput" HorizontalAlignment="Left" Width="200" Margin="2 4 0 4"/>
+            <TextBox Name="TXpreCost" PreviewKeyDown="previewSpace" PreviewTextInput="previewTextInput" HorizontalAlignment="Left" Width="200" Margin="2 4 0 4"/>
+            <TextBox Name="TXcost" PreviewKeyDown="previewSpace" PreviewTextInput="previewTextInput" HorizontalAlignment="Left" Width="200" Margin="2 4 0 4"/>
+            <TextBox Name="TXcomment" TextWrapping="Wrap" HorizontalAlignment="Left" Height="50" Width="200" Margin="2 4 0 4"/>
+        </StackPanel>
+        <Button Name="Add" Content="Сохранить" Grid.Column="1" Width="80"  Margin="4 4 0 40" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
+    </Grid>
+</Window>
