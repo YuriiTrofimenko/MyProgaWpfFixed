@@ -30,7 +30,7 @@
             <Label Name="LabelCost" FontWeight="Bold" Content=":Окончательная стоимость"/>
             <Label Name="LabelComment" FontWeight="Bold" Content=":Комментарии"/>
         </StackPanel>
-        <StackPanel VerticalAlignment="Top" Grid.Column="1" FocusManager.FocusedElement="{Binding ElementName=TXtype}">
+        <StackPanel VerticalAlignment="Top" Grid.Column="1" FocusManager.FocusedElement="{Binding ElementName=TXclient}">
             <AutoBox:AutoCompleteBox Name="TXclient" PreviewKeyDown="previewTilde" HorizontalAlignment="Left" Width="200" Margin="2" Populating="AutoClient" />
             <AutoBox:AutoCompleteBox Name="TXphone" PreviewKeyDown="previewTilde" HorizontalAlignment="Left" Width="200" Margin="2" Populating="AutoPhone" />
             <ComboBox Name="TXtype" PreviewKeyDown="previewTilde" IsEditable="True" StaysOpenOnEdit="True" HorizontalAlignment="Left" Width="200" Margin="2"/>

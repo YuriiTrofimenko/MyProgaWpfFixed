@@ -41,7 +41,7 @@ namespace MyProgaWPF
                 //UIElement elementWithFocus = Keyboard.FocusedElement as UIElement;
                 // MessageBox.Show(Convert.ToString(elementWithFocus));
 
-                Loaded += (sender, e) =>
+                this.Loaded += (sender, e) =>
                     MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
             }
             catch (Exception er)
@@ -269,9 +269,9 @@ namespace MyProgaWPF
         {
             try
             {
-                string txt = TXphone.Text;
+                //string txt = TXphone.Text;
                 List<string> autoList = new List<string>();
-                autoList.Clear();
+                //autoList.Clear();
                 if (MainWindow.repairs != null)
                 {
                     for (int i = 0; i < MainWindow.repairs.Count; i++)
